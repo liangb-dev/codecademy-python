@@ -1,0 +1,150 @@
+#!bin/usr/env python
+
+"""
+Is x an even number?
+"""
+def is_even(x): 
+    return x % 2 == 0
+
+"""
+Is x an integer? This includes decimal cases like 7.0
+"""
+def is_int(x): #includes 7.0
+    return x - int(x) == 0
+
+"""
+Takes a positive integer 'n' as input and \
+returns the sum of all that number's digit. 
+"""
+import string
+def digit_sum(n):
+    return reduce((lambda x,y: x+y), map(lambda x: int(x), list(str(n))))
+
+"""
+Compute factorial
+"""
+def factorial(x):
+    total = 1
+    for i in range(1, x+1):
+        total *= i
+    return total
+
+"""
+A prime number if a positive integer greater than 1 \
+that has no positive divisors other than 1 and itself. 
+"""
+def is_prime(x):
+    if x == 1 or x <= 0:
+        return False
+    for i in range(2, x-1):
+        if x % i == 0:
+            return False
+    else:
+        return True
+
+"""
+Define a function called 'reverse' that takes \
+a string 'text' and returns that string in reverse
+"""
+def reverse(text):
+    result = ""
+    for x in range(len(text)):
+        result += text[len(text)-x-1]
+    return result
+
+def reverse1(text):
+    return list(reversed(list(text)))
+
+def reverse2(text):
+    return list(text).reverse()
+
+def reverse3(text):
+    return list(text)[::-1]
+
+"""
+Define a function called 'anti_vowel' that \
+takes in one string, 'text', as input and returns \
+the text with all of the vowels removed. 
+"""
+def anti_vowel(text):
+    newlist = list(text)
+    vowels = "aeiouAEIOU"
+    for c in newlist:
+        if c in vowels:
+            newlist.remove(c)
+    return "".join(newlist)
+
+"""
+Define a function 'scrabble_score' that takes \
+a string 'word' as input and returns the equivalent \
+scrabble score for that word. 
+"""
+def scrabble_score(word):
+    total = 0
+    for key in word.lower():
+        total += score[key]
+    return total
+
+"""
+Write a function called 'censor' that takes \
+two strings, 'text' and 'word', as input. It \
+should return the 'text' with the 'word' you \
+chose replaced with asterisks.  
+"""
+def censor(text, word):
+    return text.replace(word, "*"*len(word))
+
+"""
+Define a function called 'count' that has two arguments \
+called 'sequence' and 'item'
+"""
+def count(sequence, item):
+    total = 0
+    for n in sequence:
+        if n == item:
+            total += 1
+    return total
+
+"""
+Define a function called 'purify' that takes \
+in a list of numbers, removes all odd \
+numbers in the list, and returns the result
+"""
+def purify(lst):
+    newlst = []
+    for n in lst:
+        if n % 2 == 0:
+            newlst.append(n)
+    return newlst
+
+"""
+Define a function called 'product' that takes \
+a list of integers as input and returns the \
+product of all of the elements in the list. 
+"""
+def product(lst):   
+    return reduce(lambda x,y: x*y, lst)
+
+"""
+Write a function 'remove_duplicates' that \
+takes in a list and removes elements of the \
+list that are the same. 
+"""
+def remove_duplicates(lst):
+    newlst = []
+    for c in lst:
+        if c not in newlst:
+            newlst.append(c)
+    return newlst
+
+"""
+Write a function called 'median' that takes a \
+list as input and returns the median \
+value of the list. 
+"""
+def median(lst):
+    L = sorted(lst)
+    n = len(lst)
+    m = n - 1
+    return (L[n/2] + L[m/2]) / 2.0
+
