@@ -71,7 +71,8 @@ def anti_vowel(text):
     vowels = "aeiouAEIOU"
     for c in newlist:
         if c in vowels:
-            newlist.remove(c)
+            #newlist.remove(c)
+            newlist = filter(lambda x: x!=c, newlist)
     return "".join(newlist)
 
 """
